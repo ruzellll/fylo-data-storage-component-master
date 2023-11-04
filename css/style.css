@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    margin: 0;
+  }
+  
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    background-color: var(--Very-Dark-Blue);
+}
+#bg-desktop{
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+}
+#bg-mobile{
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    display: none;
+}
+  
+img, svg{
+    display: block;
+    max-width: 100%;
+}
+
+:root{
+    --Gradient1: hsl(6, 100%, 80%);
+    --Gradient2: hsl(335, 100%, 65%);
+
+
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+
+    --fw400: 400;
+    --fw700: 700;
+}
+/********************************************************************/
+main{
+    display: grid;
+    grid-template-columns: 300px 600px;
+    justify-content: center;
+    gap: 1rem;
+    margin: 220px auto;
+}
+/********************************************************************/
+#left{
+    border-radius: 0.5rem;
+    border-top-right-radius: 5rem;
+    background-color: var(--Dark-Blue);
+    padding: 2rem;
+}
+#logo{
+    padding-bottom: 1.55rem;
+}
+.img-group{
+    display: flex;
+    gap: 1rem;
+}
+.img-group img{
+    background-color: var(--Very-Dark-Blue);
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+}
+/********************************************************************/
+#right{
+    position: relative;
+    height: auto;
+}
+.content{
+    position: absolute;
+    bottom: 0;
+    width: 535px;
+    background-color: var(--Dark-Blue);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: var(--Grayish-Blue);
+}
+.content p span{
+    color: var(--Pale-Blue);
+}
+#storageMeter{
+    height: 1rem;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--Very-Dark-Blue);
+    margin-block: 0.5rem 5px;
+}
+#storageUsed{
+    width: 81.5%;
+    height: 1rem;
+    background: linear-gradient(to right, var(--Gradient1), var(--Gradient2));;
+    border-radius: 1rem;
+    position: relative;
+}
+#circle{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 1rem;
+    background-color: white;
+
+    position: absolute;
+    right: 2px;
+    top: 1.5px;
+}
+.storageSize{
+    display: flex;
+    justify-content: space-between;
+}
+.storageSize p{
+    display: inline;
+    color: var(--Pale-Blue);
+}
+
+/********************************************************************/
+.popUp{
+    position: absolute;
+    top: 0;
+    right: 32px;
+    background-color: white;
+    color: var(--Grayish-Blue);
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    border-radius: 0.5rem;
+    z-index: 2;
+}
+.popUp span{
+    color: var(--Very-Dark-Blue);
+    font-size: 2rem;
+    font-weight: var(--fw700);
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 50px solid white;
+    border-right: 50px solid transparent;
+    position: absolute;
+    rotate: 90deg;
+    position: absolute;
+    right: 32px;
+    top: 2rem;
+}
+/********************************************************************/
+.attribution { 
+    font-size: 11px; text-align: center; 
+    color: var(--Grayish-Blue);
+    margin-top: 15rem;
+}
+.attribution a { 
+    color: var(--Pale-Blue); 
+}
+/********************************************************************/
+@media(max-width: 930px){
+    #bg-desktop{
+        display: none;
+    }
+    #bg-mobile{
+        display: block;
+        width: 930px;
+    }
+    main{
+        display: block;
+        margin: 150px 1rem;
+    }
+    #left{
+        max-width: 500px;
+        margin-bottom: 1rem;
+    }
+    #right{
+        position: relative;
+    }
+    .content{
+        position: static;
+        width: auto;
+    }
+    .popUp{
+        top: 80%;
+        right: 30%;
+        padding-inline: 3rem;
+    }
+    .triangle {
+        display: none;
+    }
+}
+
